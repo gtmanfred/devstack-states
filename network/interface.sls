@@ -1,8 +1,7 @@
 dummy interface:
-  network.managed:
-    - name: dummy0
-    - enabled: True
-    - type: dummy
-    - proto: none
-    - ipaddr: 172.16.0.1
-    - netmask: 255.255.255.0
+  cmd.run:
+    - names:
+      - ip link add dummy0 type dummy:
+        - unless: ip link show dummy0
+      - ip addr add 172.16.0.1/24 dev dummy0:
+        - unless: ip addr show dummy0 | grep 172.16.0.1
