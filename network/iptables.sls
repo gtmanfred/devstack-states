@@ -9,4 +9,5 @@ remove rule that blocks returning packets:
   iptables.delete:
     - table: filter
     - jump: REJECT
+    - chain: FORWARD
     - reject-with: icmp-host-prohibited
