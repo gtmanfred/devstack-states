@@ -5,5 +5,3 @@ run devstack:
     - runas: stack
     - shell: /bin/bash
     - use_vt: True
-    - env:
-      - VERBOSE: false
