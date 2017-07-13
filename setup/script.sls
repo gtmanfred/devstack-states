@@ -4,5 +4,6 @@ run devstack:
     - cwd: /opt/stack/devstack
     - runas: stack
     - shell: /bin/bash
+    - use_vt: True
     - env:
       - VERBOSE: false
