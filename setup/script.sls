@@ -4,3 +4,4 @@ run devstack:
     - cwd: /opt/stack/devstack
     - runas: stack
     - output_loglevel: quiet
+    - shell: /bin/bash
