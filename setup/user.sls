@@ -7,13 +7,13 @@ setup user:
 
 comment initial wheel in sudoers:
   file.comment:
-    - name: /etc/ssh/sshd_config
-    - regex: '%wheel	ALL=(ALL)	ALL'
+    - name: /etc/sudoers
+    - regex: '%wheel'
 
 uncomment NOPASSWD wheel:
   file.uncomment:
-    - name: /etc/ssh/sshd_config
-    - regex: '%wheel	ALL=(ALL)	NOPASSWD: ALL'
+    - name: /etc/sudoers
+    - regex: '%wheel.*NOPASSWD.*'
 
 clone git repo:
   git.latest:
