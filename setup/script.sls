@@ -5,3 +5,4 @@ run devstack:
     - runas: stack
     - shell: /bin/bash
     - use_vt: True
+    - output_loglevel: quiet
