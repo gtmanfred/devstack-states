@@ -1,2 +1,3 @@
 git:
-  pkg.latest
+  pkg.latest:
+    - reload_modules: True
