@@ -5,3 +5,5 @@ base:
     - setup.git
     - setup.script
     - network.iptables
+    - setup.securitygroup
+    - setup.image
