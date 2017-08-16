@@ -2,6 +2,10 @@ unzip image:
   file.managed:
     - name: /alpine.qcow2.xz
     - source: salt://alpine.qcow2.xz
+    - retry:
+        attempts: 5
+        until: True
+        interval: 10
     - unless: test -f /alpine.qcow2
   cmd.run:
     - name: xz -d -T 0 /alpine.qcow2.xz
