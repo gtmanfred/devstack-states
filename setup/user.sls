@@ -20,7 +20,7 @@ clone git repo:
     - target: /opt/stack/devstack
     - name: git://github.com/openstack-dev/devstack.git
     - user: stack
-    - branch: stable/ocata
+    - branch: stable/pike
 
   file.managed:
     - name: /opt/stack/devstack/local.conf
