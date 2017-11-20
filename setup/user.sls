@@ -20,7 +20,7 @@ clone git repo:
     - target: /opt/stack/devstack
     - name: git://github.com/openstack-dev/devstack.git
     - user: stack
-    - branch: stable/pike
+    - branch: stable/{{salt.pillar.get('openstack:version', 'pike')}}
 
   file.managed:
     - name: /opt/stack/devstack/local.conf
