@@ -1,19 +1,26 @@
+{%- load_yaml as rawmap %}
+Debian:
+  sudogrp: sudo
+RedHat:
+  sudogrp: wheel
+{%- endload %}
+{%- set config = salt['grains.filter_by'](rawmap, grain='os_family', merge=salt['config.get']('openstack:lookup')) %}
 setup user:
   user.present:
     - name: stack
     - home: /opt/stack
     - groups:
-      - wheel
+      - {{config.sudogrp}}
 
-comment initial wheel in sudoers:
+comment initial {{config.sudogrp}} in sudoers:
   file.comment:
     - name: /etc/sudoers
-    - regex: '%wheel'
+    - regex: '%{{config.sudogrp}}'
 
-uncomment NOPASSWD wheel:
-  file.uncomment:
+NOPASSWD {{config.sudogrp}}:
+  file.append:
     - name: /etc/sudoers
-    - regex: '%wheel.*NOPASSWD.*'
+    - text: '%{{config.sudogrp}} ALL=(ALL) NOPASSWD: ALL'
 
 clone git repo:
   git.latest:
