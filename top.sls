@@ -2,7 +2,7 @@ base:
   '*':
     - network.interface
     - setup.user
-    - setup.git
+    - setup.packages
     - setup.script
     - network.iptables
     - setup.securitygroup
