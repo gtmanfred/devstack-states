@@ -23,7 +23,7 @@ setup glance image:
       - OS_IDENTITY_API_VERSION: 3
       - OS_PASSWORD: secret
       - OS_AUTH_TYPE: password
-      - OS_AUTH_URL: http://{{salt.network.ip_addrs(interface='eth0')|first}}/identity
+      - OS_AUTH_URL: http://{{salt.network.ipaddrs(cidr='10.128.0.0/24')|first}}/identity
       - OS_USERNAME: admin
       - OS_TENANT_NAME: admin
       - OS_VOLUME_API_VERSION: 2

@@ -3,7 +3,7 @@ add masquerade rule:
     - table: nat
     - chain: POSTROUTING
     - jump: MASQUERADE
-    - o: eth0
+    - o: {{ salt.network.ifacestartswith('10')|first }}
 
 remove rule that blocks returning packets:
   iptables.delete:
