@@ -26,14 +26,7 @@ fileserver_backend:
 gitfs_remotes:
   - git://github.com/gtmanfred/devstack-states.git
 HERE
-
-mkdir -p /srv/pillar
-tee /srv/pillar/top.sls <<HERE
-base:
-  '*':
-    - openstack
-HERE
-tee /srv/pillar/openstack.sls <<HERE
+tee /etc/salt/grains <<HERE
 openstack:
   version: $RELEASE
 HERE
