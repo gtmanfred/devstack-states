@@ -1,8 +1,8 @@
 # gcloud compute instances create \
-#    --image-family ubuntu-1604-lts \
-#    --image-project ubuntu-os-cloud \
+#    --image-family centos-7 \
+#    --image-project centos-cloud \
 #    --metadata-from-file startup-script=openstack.sh \
-#    --boot-disk-size=1000GiB \
+#    --boot-disk-size=300GiB \
 #    --boot-disk-type=pd-ssd \
 #    --can-ip-forward \
 #    --machine-type n1-highcpu-8 \
