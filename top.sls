@@ -1,5 +1,6 @@
 base:
   '*':
+    - network.firewalld
     - network.interface
     - setup.user
     - setup.packages
