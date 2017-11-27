@@ -7,3 +7,4 @@ base:
     - network.iptables
     - setup.securitygroup
     - setup.image
+    - setup.keystone
