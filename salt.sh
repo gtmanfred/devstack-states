@@ -44,7 +44,7 @@ rc-service salt-minion start
 HERE
 tee /etc/salt/cloud <<HERE
 minion:
-  master: $(getent hosts salt| awk '{print $1}')
+  master: $(getent ahostsv4 salt| awk '/STREAM/ {print $1}')
 HERE
 tee /etc/salt/cloud.providers.d/openstack.conf <<HERE
 openstack:
