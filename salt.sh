@@ -65,3 +65,4 @@ alpine:
 HERE
 chmod -R 2775 "${directories[@]}"
 chgrp -R salt "${directories[@]}"
+systemctl enable --now salt-master salt-minion
