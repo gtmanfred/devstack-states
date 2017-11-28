@@ -45,7 +45,6 @@ HERE
 tee /etc/salt/cloud <<HERE
 minion:
   master: $(getent hosts salt| awk '{print $1}')
-ssh_interface: floating_ips
 HERE
 tee /etc/salt/cloud.providers.d/openstack.conf <<HERE
 openstack:
@@ -62,6 +61,7 @@ alpine:
   ssh_key_file: /home/daniel/.ssh/id_rsa
   ssh_username: alpine
   script: alpine
+  ssh_interface: floating_ips
 HERE
 chmod -R 2775 "${directories[@]}"
 chgrp -R salt "${directories[@]}"
