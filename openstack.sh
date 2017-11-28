@@ -1,12 +1,16 @@
 # gcloud compute instances create \
-#    --image-family centos-7 \
-#    --image-project centos-cloud \
+#    --image-family ubuntu-1604-lts \
+#    --image-project ubuntu-os-cloud \
 #    --metadata-from-file startup-script=openstack.sh \
 #    --boot-disk-size=300GiB \
 #    --boot-disk-type=pd-ssd \
-#    --can-ip-forward \
-#    --machine-type n1-highcpu-8 \
+#    --machine-type n1-highcpu-16 \
 #    --tags=http-server openstack
+#
+# gcloud compute routes create openstack-route \
+#    --destination-range=172.16.0.0/16 \
+#    --next-hop-instance=openstack
+
 export RELEASE=pike
 
 if test -f /etc/debian_version; then
