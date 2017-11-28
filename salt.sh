@@ -31,7 +31,7 @@ clouds:
      username: 'demo'
      password: secret
      project_name: 'demo'
-     auth_url: 'http://10.128.0.2/identity'
+     auth_url: 'http://$(getent hosts openstack | awk '{print $1}')/identity'
 HERE
 tee /etc/salt/cloud.deploy.d/alpine.sh <<HERE
 #!/bin/bash
@@ -44,7 +44,7 @@ rc-service salt-minion start
 HERE
 tee /etc/salt/cloud <<HERE
 minion:
-  master: 10.128.0.3
+  master: $(getent hosts salt| awk '{print $1}')
 ssh_interface: floating_ips
 HERE
 tee /etc/salt/cloud.providers.d/openstack.conf <<HERE
