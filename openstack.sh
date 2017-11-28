@@ -4,6 +4,7 @@
 #    --metadata-from-file startup-script=openstack.sh \
 #    --boot-disk-size=300GiB \
 #    --boot-disk-type=pd-ssd \
+#    --can-ip-forward \
 #    --machine-type n1-highcpu-16 \
 #    --tags=http-server openstack
 #
