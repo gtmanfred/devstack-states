@@ -38,7 +38,7 @@ tee /etc/salt/cloud.deploy.d/alpine.sh <<HERE
 mkdir -p /etc/salt/pki/minion
 mv /tmp/.saltcloud-*/minion /etc/salt/minion
 mv /tmp/.saltcloud-*/minion* /etc/salt/pki/minion/
-apk add --no-progress salt-minion
+apk add --update --no-progress salt-minion
 rc-update add salt-minion default
 rc-service salt-minion start
 HERE
