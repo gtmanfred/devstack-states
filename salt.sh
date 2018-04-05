@@ -9,7 +9,7 @@ gpasswd -a daniel salt
 directories=(/etc/salt /var/cache/salt /var/log/salt /var/run/salt /etc/openstack /etc/salt/cloud.{providers,profiles,deploy}.d)
 mkdir -p "${directories[@]}"
 yum install -y python-pip python-devel gcc git systemd-python
-sudo -u daniel pip install --user --src /home/daniel/src -e git+git://github.com/gtmanfred/salt.git@shade#egg=salt shade
+sudo -u daniel pip install --user --src /home/daniel/src -e git+git://github.com/saltstack/salt.git@2018.3#egg=salt shade
 for dir in minion master; do
     cp -a "/home/daniel/src/salt/pkg/salt-${dir}.service" /etc/systemd/system/
     mkdir "/etc/systemd/system/salt-${dir}.service.d"
