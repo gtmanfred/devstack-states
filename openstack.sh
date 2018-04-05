@@ -22,7 +22,7 @@ fi
 export GITPYTHON
 
 curl -Lo boot.sh https://bootstrap.saltstack.com
-sh boot.sh -ZDUX -p "$GITPYTHON"
+sh boot.sh -ZDUX -p "$GITPYTHON" stable 2017.7
 
 tee /etc/salt/minion <<HERE
 file_client: local
